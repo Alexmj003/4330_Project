@@ -1,9 +1,15 @@
 import pymsql.connector
 
-db = pymysql.connector.connect("localhost", "user", "password", "database")
-curser = db.curser()
+def getFile():
+    fileName = request.form['document']
 
-def delete_doc():
+    db = pymysql.connect("localhost", "user", "password", "database")
+
+with db:
+    curser = db.curser()
+
     query = "DELETE FROM table WHERE id ='%s'"
     cursor.execute(query);
+
     db.commit()
+    db.close()
