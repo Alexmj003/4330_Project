@@ -1,7 +1,7 @@
 import pymsql.connector
 
 def getFile():
-    fileName = request.form['document']
+    fileName = request.form['document2']
 
     db = pymysql.connect("localhost", "user", "password", "database")
 
