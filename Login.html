@@ -13,6 +13,83 @@
   padding: 12% 0 0;
   margin: auto;
 }
+
+.nav {
+  width: 100%;
+  height: 60px;
+  line-height: 32px;
+}
+
+.nav a {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  font-size: 18px;
+  margin-top:30px;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+
+.nav p {
+  padding: 0.75em 2.5 em;
+  font-size: 18px;
+  line-height:24px;
+  line-width:90px;
+  font-weight: 180;
+  float: right;
+  margin-right: 36px;
+  margin-top:12px;
+
+}
+
+.nav .nav_btn {
+float: left;
+margin-top: 30px;
+font-size: 30px;
+}
+
+<!---------------->
+
+.nav2 {
+  width: 100%;
+  height: 60px;
+  line-height: 32px;
+}
+
+.nav2 a {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  font-size: 18px;
+  margin-top:30px;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+
+.nav2 p {
+  padding: 0.75em 2.5 em;
+  font-size: 18px;
+  line-height:24px;
+  line-width:90px;
+  font-weight: 180;
+  float: right;
+  margin-right: 46px;
+  margin-top:12px;
+
+}
+
+.nav2 .nav_btn2 {
+float: left;
+margin-top: 30px;
+font-size: 30px;
+}
+
+.nav p:hover {
+  text-shadow: 2px 2px 2px #000000;
+}
+
+
+
 .form {
   position: relative;
   z-index: 1;
@@ -105,24 +182,47 @@ body {
 </head>
 <body>
 
+  <div class="nav">
+    <a class="nav_btn" href="#"></a>
+    <a href="SignUp.html"><p>Sign Up</p></a>
+
+  <div class="nav2">
+    <a class="nav_btn2" href="#"></a>
+    <a href="Login.html"><p>Login</p></a>
+  </div>
+  </div>
+
+
 <div class="login-page">
   <div class="form">
     <form class="register-form">
       <input type="text" placeholder="name"/>
       <input type="password" placeholder="password"/>
       <input type="text" placeholder="email address"/>
-
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
     </form>
+
     <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
-      <button>login</button>
+      <input type="text" placeholder="username" name="userid"/>
+      <input type="password" placeholder="password" name="pswrd"/>
+      <button onclick="check(this.form)">login</button>
       <p class="message"> <a href="/ForgotPW.html">Forgot Password?</a></p>
     </form>
   </div>
 </div>
 
+<script language="javascript">
+function check(form){
+  if(form.userid.value == "root" && form.pswrd.value=="password")
+  {
+    window.open("file:///C:/Users/Jacob/Documents/4330/4330_Project-Website-GUI/Home.html")
+  }
+  else {
+    {
+      alert("The username and password you entered don't match.")
+    }
+  }
+}
+</script>
 
 </body>
 </html>
