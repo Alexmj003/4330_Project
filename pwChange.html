@@ -127,22 +127,23 @@ body {
     <a href="SignOut.html" style="float:right">Sign Out</a>
   </div>
 
-  <div class="row">
-    <div class="leftcolumn">
-      <div class="card">
-
-        <h2>Account Information</h2>
-        <h3>Username: Blah</h3>
-      </div>
-    </div>
-
-    <div class="rightcolumn">
-      <div class="card">
-        <h2>Tools</h2>
-          <a href="pwChange.html">Need to change your password?</a>
-      </div>
-    </div>
+  <div class="card">
+    <h2>Password Reset</h2>
+    <!--Needs separate function to add new password to database for action-->
+    <!--form enctype="text" means data will be sent as text, and spaces will be replaced by + signs-->
+    <form enctype="text" onsubmit="changePW()" method="POST">
+      New Password:<br>
+      <input type="text" name="newPassword"><br><br>
+      <input type="submit" value="Submit">
+    </form>
   </div>
+
+  <script>
+    function changePW() {
+        //query?
+        alert("Password changed successfully.");
+    }
+  </script>
 
   <div class="footer">
   </div>

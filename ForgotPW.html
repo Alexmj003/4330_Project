@@ -120,6 +120,10 @@ body {
     <h1>CSC 4330 Project</h1>
   </div>
 
+  <div class="topnav">
+    <a href="Login.html">Return to Login</a>
+  </div>
+
   <div class="card">
     <h2>Password Retrieval</h2>
     <form onsubmit="pwRetrieval()" method="POST">
@@ -131,7 +135,8 @@ body {
 
   <script>
     function pwRetrieval() {
-      //insert query to check against database
+      //insert query to check against database and send password to email if
+      //the email is within the database, or change this whole thing if you need
       //if successful
       alert("Your password was sent to your email");
       //if unsuccessful
@@ -139,7 +144,8 @@ body {
     }
   </script>
 
-</body>
+  <div class="footer">
+  </div>
 
-<div class="footer">
-</div>
+</body>
+</html>

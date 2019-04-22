@@ -16,7 +16,7 @@ body {
 .header {
   padding: 30px;
   text-align: center;
-  background: #BBDCDB;
+  background: #BBDCDB;;
 }
 
 .header h1 {
@@ -68,7 +68,7 @@ body {
 
 /*Add a card effect*/
 .card {
-  background-color: white;;
+  background-color: white;
   padding: 20px;
   margin-top: 20px;
 }
@@ -114,63 +114,22 @@ body {
 }
 </style>
 </head>
+
 <body>
-
-<div class="header">
-  <h1>CSC 4330 Project</h1>
-</div>
-
-<div class="topnav">
-  <a href="Home.html">Home</a>
-  <a href="Account.html">Account</a>
-  <a href="SignOut.html" style="float:right">Sign Out</a>
-</div>
-
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-
-      <h2>Document Viewer</h2>
-      <h5>Enter keywords into the search bar below to find your document</h5>
-      <input type="text" placeholder="Search..">
-      <button type="submit">Submit</button>
-      <!--needs the search function implemented and connected to the search bar-->
-      <!--when submitted, needs to display list of 5 top documents you can open-->
-      <!--when you click on document, it'll open in the viewer-->
-
-      <iframe class="doc" src=""></iframe> <!--Needs the input from the user to display document from database/ src needs to
-      be a variable that changes according to what the person selects from the database-->
-    </div>
+  <div class="header">
+    <h1>CSC 4330 Project</h1>
   </div>
 
-  <div class="rightcolumn">
-    <div class="card">
-      <!--Where the wordcloud will be positioned on the page, just being used as a placeholder-->
-      <h2>Keywords Word Cloud</h2>
-      <div class="Word Cloud" style="height:100px;">Image</div>
-    </div>
-    <div class="card">
-      <h3>Options</h3>
-      <div class="add">
-
-        <h5>Add Documents</h5>
-          <form enctype="multipart/form-data"
-            action="Add.py" method="POST">
-            <input type="file" name="document"><br>
-          <input type="submit" value="Add">
-        </form>
-      </div>
-      <div class="delete">
-
-        <h5>Delete Documents</h5>
-        <form enctype="multipart/form-data"
-          action="Delete.py" method="GET">
-          <input type="text" placeholder="File Name.."><br>
-        <input type="submit" value="delete">
-      </div>
-    </div>
+  <div class="topnav">
   </div>
-</div>
+
+  <div class="card">
+    <h3>You have been signed out</h3><br>
+    <a href="Login.html">Click here if you are not redirected after a few min</a>
+  </div>
+  <script>
+    setTimeout(function(){window.location.href='Login.html'},3000);
+  </script>
 
 <div class="footer">
 </div>
