@@ -1,6 +1,5 @@
 
 
-i
 import collections
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -18,10 +17,11 @@ class FileParser:
         result_file = None
         filter_words = []
         keywords = {}
+        wordfreq = {}
         wordcounter = None
         topkeywords = []
 
-    def readtxt(self,txt = str('PracticeFile.txt')):
+    def readtxt(self,txt = str('PracticeFile.txt'), txt2 = str('FinalFile.txt')):
         self.input_file = open(txt,'r')
         self.content = self.input_file.read()
         self.content_split = self.content.split(' ')#splitstring
@@ -30,6 +30,7 @@ class FileParser:
         self.keywords = {}
         self.word_limiter = 10
         self.topkeywords = []
+        self.wordfreq = {}
         for r in self.content_split:
             if not r in self.stop_words:
                 self.filter_words.append(r)
@@ -41,9 +42,15 @@ class FileParser:
         self.wordcounter = collections.Counter(self.keywords)
         for word, count in self.wordcounter.most_common(self.word_limiter):
             self.topkeywords.append(word)
+            self.wordfreq[word] = count
         self.input_file.close()
+        file = open(txt2,'a')
+        file.truncate(0)
+        for each in self.topkeywords:
+            file.write(each + " " )
+        file.close()
 
-    def readdocx(self,txt = str('FileParser.docx')):
+    def readdocx(self,txt = str('FileParser.docx'),txt2 = str('FinalFile.txt')):
         self.input_file = docx.Document(txt)
         self.content = []
         self.stop_words = set(stopwords.words('english'))  # stop word filtering
@@ -51,6 +58,7 @@ class FileParser:
         self.keywords = {}
         self.word_limiter = 10
         self.topkeywords = []
+        self.wordfreq = {}
         for para in self.input_file.paragraphs:
             self.content.append(para.text)
         text = "".join(self.content)
@@ -66,6 +74,15 @@ class FileParser:
         self.wordcounter = collections.Counter(self.keywords)
         for word, count in self.wordcounter.most_common(self.word_limiter):
             self.topkeywords.append(word)
+            self.wordfreq[word] = count
+        file = open(txt2, 'a')
+        file.truncate(0)
+        for each in self.topkeywords:
+            file.write(each + " ")
+        file.close()
+
+    def get_frequency(self):
+        return self.wordfreq
 
     def gettopkeywords(self):
         return self.topkeywords
@@ -90,7 +107,7 @@ class FileParser:
 
 def __main__():
     Document = FileParser()
-    Document.readdocx()
+    Document.readtxt()
     words = Document.gettopkeywords()
     print("HELLO")
     print(type(words))
