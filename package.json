@@ -1,0 +1,30 @@
+{
+  "name": "webdatabase",
+  "version": "0.9.2",
+  "description": "Online Database for documents and users",
+  "main": "app.js",
+  "scripts": {
+    "test": "lmao"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexmj003/4330_Project.git"
+  },
+  "keywords": [
+    "keywords"
+  ],
+  "author": "Hasan, Tania, Alex, Harry, Jacob",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Alexmj003/4330_Project/issues"
+  },
+  "homepage": "https://github.com/Alexmj003/4330_Project#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-fileupload": "^1.1.4",
+    "mysql": "^2.17.1",
+    "req-flash": "0.0.3"
+  }
+}
