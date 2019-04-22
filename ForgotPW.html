@@ -120,22 +120,23 @@ body {
     <h1>CSC 4330 Project</h1>
   </div>
 
-<!--Navigation bar-->
-  <div class="topnav">
-    <a href="Home.html">Home</a>
-    <a href="Account.html">Account</a>
-    <a href="#">Admin</a>
-    <a href="#" style="float:right">Sign Out</a>
-  </div>
-
   <div class="card">
-    <h2>Password Reset</h2>
-    <form enctype="multipart/form-data" action="Add.py" method="POST">
-      New Password:<br>
-      <input type="text" name="newPassword"><br><br>
+    <h2>Password Retrieval</h2>
+    <form onsubmit="emailSent()" method="POST">
+      Enter your email:<br><br>
+      <input type="email" name="Email"><br><br>
       <input type="submit" value="Submit">
     </form>
   </div>
 
-  <div class="footer">
-  </div>
+  <script>
+    function emailSent() {
+      alert("Your password was sent to your email");
+      //insert query here to check against database
+    }
+  </script>
+
+</body>
+
+<div class="footer">
+</div>
