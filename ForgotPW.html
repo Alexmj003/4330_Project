@@ -122,7 +122,7 @@ body {
 
   <div class="card">
     <h2>Password Retrieval</h2>
-    <form onsubmit="emailSent()" method="POST">
+    <form onsubmit="pwRetrieval()" method="POST">
       Enter your email:<br><br>
       <input type="email" name="Email"><br><br>
       <input type="submit" value="Submit">
@@ -130,9 +130,12 @@ body {
   </div>
 
   <script>
-    function emailSent() {
+    function pwRetrieval() {
+      //insert query to check against database
+      //if successful
       alert("Your password was sent to your email");
-      //insert query here to check against database
+      //if unsuccessful
+      alert("Email not registered");
     }
   </script>
 
